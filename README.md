@@ -1,41 +1,40 @@
 # A-program-for-communication-of-people-with-hearing-and-speech-defects
-Обучение нейронной сети для распознавание жестов, используемых для общения между людьми с дефектами слуха и речи.
+Training a neural network to recognise gestures used for communication between hearing and speech impaired people.
 
-Жестовой язык – это язык, используемый глухими и слабослышащими людьми. Каждый жест производится руками в сочетании с мимикой, формой и движении губ, положением корпуса тела. Он обладает своей грамматикой и лексикой. Также в состав этого языка входит свой жестовой алфавит (дактильная азбука) .
+Gesture language is the language used by deaf and hard of hearing people. Each gesture is produced by the hands in combination with facial expressions, lip shape and movement, and body body posture. It has its own grammar and vocabulary. It also has its own gesture alphabet (dactyl alphabet) .
 
-Дактиль – это жестовая азбука, в которой каждой букве соответствует определенный жест . Сам жест выполняется одной рукой пальцами. Эту азбука в основном используют на начальном этапе овладения языка. Так дети могут выражать свои мысли, которые не могут еще сказать полноценными словами. Также некоторые слова можно сказать только на дактиле. Например, назвать своё имя люди могут только с помощью жестовой азбуки. Поэтому дактилология является основой в изучении жестового языка 
+Dactyl is a gesture alphabet in which each letter corresponds to a certain gesture. The gesture itself is performed with one hand using fingers. This alphabet is mainly used at the initial stage of language acquisition. So children can express their thoughts, which can not yet say full-fledged words. Also, some words can be said only in dactyl. For example, people can say their name only with the help of sign alphabet. Therefore, dactylology is the basis in the study of sign language
 
-Задача классификации — задача, в которой имеется множество объектов (ситуаций) разделённых, некоторым образом, на классы. Задано конечное множество объектов, для которых известно, к каким классам они 
-относятся.
+Classification task - a task in which there is a set of objects (situations) divided into classes in some way. There is a finite set of objects for which it is known to which classes they belong.
 
-Требуется построить алгоритм, способный классифицировать произвольный объект из исходного множества.
+It is required to build an algorithm capable of classifying an arbitrary object from the initial set.
 
-Заданы два множества: объектов и классов, к которым они принадлежат. Элементы множества объектов – это фотографии жеста каждой буквы. Для их описания используются следующие признаки:
+Two sets are given: objects and the classes they belong to. Elements of the set of objects are photos of each letter gesture. The following attributes are used to describe them:
 
-•	Содержание белого цвета в каждом пикселе.
+- The white colour content of each pixel.
 
-•	Количество пикселей.
+- The number of pixels.
 
-Более сложные признаки выделяются автоматически с помощью сверточных слоев нейронной сети. Множество классов – это название букв алфавита.
+More complex features are extracted automatically using convolutional layers of the neural network. The set of classes is the name of the letters of the alphabet.
 
-Требуется построить алгоритм, который будет сопоставлять фотографии жеста с названием буквы, которую он показывает.
+We need to build an algorithm that maps the pictures of a gesture to the name of the letter it shows.
 
-Компьютерное зрение – это область искусственного интеллекта, связанная с анализом изображения и видео. Как и другие типы ИИ, с помощью компьютерного зрения люди пытаются автоматизировать интеллектуальные задачи, обычно выполняемые людьми. В данном случае это способность распознавать объекты по фото или видео.
+Computer vision is an area of artificial intelligence related to image and video analysis. Like other types of AI, computer vision is used to try to automate intellectual tasks normally performed by humans. In this case, it is the ability to recognise objects from a photo or video.
 
-Нейронные сети – это один из видов машинного обучения, который имеет на данный момент хорошие результаты в самых различных областях человеческого знания, как распознавание речи, анализ текста и изображений 
+Neural networks are a type of machine learning that has so far good results in a wide variety of human knowledge areas like speech recognition, text and image analysis
 
-Некоторые буквы в дактильной азбуке нужно показывать в движении, поэтому в отдельном коде представлен пример работы именно  с этими буквами.
+Some letters in the dactyl alphabet need to be shown in motion, so a separate code presents an example of working with these particular letters.
 
-Для обучения нейронной сети требуется большое количество данных для хорошей обучаемости. После анализа источников информации был найден набор данных, который содержит в себе по 20 разных фотографий каждого жеста на русском языке, но этого количества оказалось недостаточно, так как сеть плохо обучалась, и получалась маленькая точность. Поэтому была создана аппробационная группа из друзей и членов семьи, чтобы сделать еще по несколько фотографий каждой буквы. У них не было цели делать фотографии под хорошим светом, без украшений и на чистом фоне для того, чтобы сеть могла определять жесты при любых условиях. Ниже прикреплены примеры фотографий, которые получились. 
+Training a neural network requires a large amount of data for good trainability. After analysing the sources of information a data set was found which contains 20 different photos of each gesture in Russian, but this amount was not enough, as the network was poorly trained and the accuracy was low. So an approbation group of friends and family members was created to take a few more photos of each letter. They had the goal of taking photos under good light, without decorations and on a clean background so that the network could detect gestures under all conditions. Attached below are examples of the photos that turned out.
 
-Также после просмотра обучающего видео по жестовому языку, а именно по дактилологии, возникла необходимость добавить еще несколько скриншотов.
+Also, after watching an instructional video on sign language, specifically dactylology, it became necessary to add some more screenshots.
 
-Для каждого жеста было сделано около 90 фотографий.
+About 90 photos were taken for each gesture.
 
-Также около 80 видео для недостающих жестов.
+Also about 80 videos for the missing gestures.
 
-Таким образом, программа считывает изображение жеста с камеры, нейросеть распознает его и выводит правильную букву (в 83% случаях по результатам проверки на тестовых данных). Все задачи были выполнены, создание программы для распознавания жестов при помощи искусственных нейронных сетей с приемлемой точностью возможно. 
+Thus, the program reads the image of the gesture from the camera, the neural network recognises it and outputs the correct letter (in 83% of cases according to the test data). All tasks have been completed, creation of a programme for gesture recognition using artificial neural networks with acceptable accuracy is possible.
 
-По данной ссылке можно проверить работу программы и самостоятельно показать жесты.
+At this link you can check the work of the programme and show the gestures yourself.
 
 https://drive.google.com/drive/folders/1_kZ5GxUM9BBSZrBXeseE7sz2ajLX5P_z?usp=sharing
